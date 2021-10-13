@@ -21,7 +21,7 @@ public class HerramientasArchivos {
 			fr = new FileReader(ruta);
 			buff = new BufferedReader(fr);
 			String cad;
-			while ((cad = buff.readLine()) != null) {
+			while ((cad = buff.readLine()) != null ) {
 				cadenas.agregarEnCola(cad);
 			}
 		} catch (FileNotFoundException ex) {
@@ -48,7 +48,7 @@ public class HerramientasArchivos {
 			pw = new PrintWriter(fw);
 			for (int i = 0; i < lista.getLongitud(); i++) {
 				for (int j = 0; j < lista.getLongitud(i); j++) {
-					pw.write((String) (lista.obtenerNodo(i,j)));
+					pw.write((String) (lista.obtenerNodo(i, j)));
 					pw.write(" ");
 				}
 				pw.write("\n");

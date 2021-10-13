@@ -368,8 +368,10 @@ public class ListaSimple<E> {
 			agregarEnCola((E) listaAux);
 		}
 	}
+
 	/**
 	 * Método que separa las palabras de un archivo y las escibe en una lista
+	 * 
 	 * @param archivo Archivo a leer
 	 * @throws IndiceFueraDeRango Problema de lectura
 	 */
@@ -388,8 +390,10 @@ public class ListaSimple<E> {
 			k++;
 		}
 	}
+
 	/**
 	 * Método que escribe los datos de una lista en un nuevo archivo
+	 * 
 	 * @param archivo
 	 * @param escribir
 	 * @throws IndiceFueraDeRango
