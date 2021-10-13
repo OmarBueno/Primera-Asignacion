@@ -3,6 +3,7 @@ package fes.aragon.utilerias.estaticas;
 import java.util.Random;
 
 import fes.aragon.except.IndiceFueraDeRango;
+import fes.aragon.modelo.Datos;
 
 public class ArreglosBi<E> {
 	private int indiceFila = 0;
@@ -117,8 +118,16 @@ public class ArreglosBi<E> {
 	 * 
 	 * @return retorna la longitud del arreglo
 	 */
-	public Integer longitud() {
+	public Integer longitudFila(int fila) {
+		return l[fila].length;
+	}
+
+	public Integer longitudColumna(int columna) {
 		return l.length;
+	}
+
+	public Integer longitudTotal() {
+		return datos;
 	}
 
 	/**
@@ -132,6 +141,78 @@ public class ArreglosBi<E> {
 		for (int i = 0; i < celdas; i++) {
 			insertar((E) (Integer) rd.nextInt(101));
 		}
+	}
+
+	@SuppressWarnings("unchecked")
+	public void llenarDatos() throws IndiceFueraDeRango {
+		Random rd = new Random();
+		String datos[] = { "Violeta", "Omar", "Sol", "Martinez", "Alejandro", "Bueno", "Zaldivar", "Kiry", "Golo",
+				"Goyo", "Morita", "Gordita" };
+		for (int i = 0; i < celdas; i++) {
+			insertar((E) new Datos(datos[rd.nextInt(12)], rd.nextInt(101)));
+		}
+	}
+
+	@SuppressWarnings("unchecked")
+	public Arreglos<E> datosColumna(int columna) throws IndiceFueraDeRango {
+		Arreglos<Object> arr = new Arreglos<>(longitudColumna(columna));
+		if (columna < l[columna].length) {
+			for (int i = 0; i < l.length; i++) {
+				arr.insertar(l[i][columna]);
+			}
+		}
+		return (Arreglos<E>) arr;
+	}
+
+	@SuppressWarnings("unchecked")
+	public Arreglos<E> datosFila(int fila) throws IndiceFueraDeRango {
+		Arreglos<Object> arr = new Arreglos<>(longitudFila(fila));
+		if (fila < l.length) {
+			for (int i = 0; i < l[fila].length; i++) {
+				arr.insertar(l[fila][i]);
+			}
+		}
+		return (Arreglos<E>) arr;
+	}
+
+	@SuppressWarnings("unchecked")
+	public int[] sumarFila(int... filas) throws IndiceFueraDeRango {
+		int suma = 0;
+		int sumas[] = new int[filas.length];
+		Arreglos<Object> aux = null;
+		for (int i = 0; i < filas.length; i++) {
+			if (filas[i] < l.length) {
+				aux = (Arreglos<Object>) datosFila(filas[i]);
+				for (int j = 0; j < aux.longitud(); j++) {
+					suma += ((Datos) aux.recuperar(j)).getNumero();
+					// System.out.println("Dato: "+((Datos) aux.recuperar(j)).getNumero());
+				}
+				System.out.println("Suma de la Fila " + filas[i] + ": " + suma);
+				sumas[i] = suma;
+				suma = 0;
+			}
+		}
+		return sumas;
+	}
+
+	@SuppressWarnings("unchecked")
+	public int[] sumarColumnas(int... columnas) throws IndiceFueraDeRango {
+		int suma = 0;
+		int sumas[] = new int[columnas.length];
+		Arreglos<Object> aux = null;
+		for (int i = 0; i < columnas.length; i++) {
+			if (columnas[i] < l[i].length) {
+				aux = (Arreglos<Object>) datosColumna(columnas[i]);
+				for (int j = 0; j < aux.longitud(); j++) {
+					suma += ((Datos) aux.recuperar(j)).getNumero();
+					// System.out.println("Dato: "+((Datos) aux.recuperar(j)).getNumero());
+				}
+				System.out.println("Suma de la Columa " + columnas[i] + ": " + suma);
+				sumas[i] = suma;
+				suma = 0;
+			}
+		}
+		return sumas;
 	}
 
 	/**

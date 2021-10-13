@@ -64,6 +64,7 @@ public class Arreglos<E> {
 			throw new IndiceFueraDeRango("Fallo funcion recuperar Indice fuera de rango");
 		}
 	}
+	
 
 	/**
 	 * Metodo para borrar el elemento pasando su indice
