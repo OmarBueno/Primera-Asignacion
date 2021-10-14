@@ -6,10 +6,9 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="jar/JTattoo-1.6.13.jar"/>
-	<classpathentry kind="lib" path="jar/Problema3.jar">
+	<classpathentry kind="lib" path="jar/Problema1jar.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:file:/C:/Users/omar1/Desktop/Programacion/Estructura%20de%20Datos/Primera%20Asignacion/Problema%203/Doc/DocProblema%203.zip!/"/>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/omar1/Desktop/Programacion/Estructura%20de%20Datos/Primera%20Asignacion/Problema%201/Doc/Problema%201.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="bin"/>

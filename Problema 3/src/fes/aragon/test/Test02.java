@@ -4,12 +4,8 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-
-import fes.aragon.except.IndiceFueraDeRango;
-import fes.aragon.utilerias.dinamicas.listasimple.ListaSimple;
+import fes.aragon.problema3.utilerias.dinamicas.listasimple.ListaSimple;
 
 public class Test02 {
 

@@ -5,7 +5,7 @@
  */
 package fes.aragon.inicio;
 
-import fes.aragon.swing.clases.Menu;
+import fes.aragon.swing.clases.*;
 
 /**
  *
@@ -124,8 +124,9 @@ public class InicioSwing extends javax.swing.JFrame {
     }//GEN-LAST:event_btnSalir1ActionPerformed
 
     private void btnIniciar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIniciar1ActionPerformed
-       Menu menu = new Menu(this, true);
-       menu.setVisible(true);
+       //Menu menu = new Menu(this, true);
+       Menu menu1 = new Menu(this, true);
+       menu1.setVisible(true);
     }//GEN-LAST:event_btnIniciar1ActionPerformed
 
     /**

@@ -1,4 +1,4 @@
-package fes.aragon.test;
+package fes.aragon.inicio;
 
 import java.io.File;
 
@@ -6,8 +6,7 @@ import fes.aragon.problema3.except.IndiceFueraDeRango;
 import fes.aragon.problema3.utilerias.dinamicas.listadoble.ListaDoble;
 import fes.aragon.problema3.utilerias.dinamicas.listasimple.ListaSimple;
 
-public class Test03 {
-
+public class Inicio {
 	public static void main(String[] args) throws IndiceFueraDeRango {
 		File ruta = new File(System.getProperty("user.dir") + "/Textos/Informacion");
 		File rutaDos = new File(System.getProperty("user.dir") + "/Textos/Informacion Modificada");
@@ -18,5 +17,4 @@ public class Test03 {
 		lista.EscribirEnArchivo(ruta, rutaDos);
 
 	}
-
 }
