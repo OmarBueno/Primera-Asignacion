@@ -7,5 +7,10 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/omar1/Desktop/Programacion/Estructura de Datos/Primera Asignacion/Problema 2/jar/JTattoo-1.6.13.jar"/>
+	<classpathentry kind="lib" path="jar/Problema2.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/omar1/Desktop/Programacion/Estructura%20de%20Datos/Primera%20Asignacion/Problema%202/Doc/DocProblema%202.zip!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

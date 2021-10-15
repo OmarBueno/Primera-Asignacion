@@ -1,8 +1,8 @@
 package fes.aragon.test;
 
-import fes.aragon.except.IndiceFueraDeRango;
-import fes.aragon.utilerias.dinamicas.listadoble.ListaDoble;
-import fes.aragon.utilerias.dinamicas.listasimple.ListaSimple;
+import fes.aragon.problema2.except.IndiceFueraDeRango;
+import fes.aragon.problema2.utilerias.dinamicas.listadoble.ListaDoble;
+import fes.aragon.problema2.utilerias.dinamicas.listasimple.ListaSimple;
 
 public class Test01 {
 
