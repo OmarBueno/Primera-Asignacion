@@ -1,21 +1,25 @@
 package fes.aragon.test;
 
-import fes.aragon.problema1.except.IndiceFueraDeRango;
-import fes.aragon.problema1.utilerias.estaticas.ArreglosBi;
+import fes.aragon.except.IndiceFueraDeRango;
+import fes.aragon.problema1.utilerias.estaticas.ArreglosBidimencionales;
+
 
 public class Test02 {
 
 	public static void main(String[] args) throws IndiceFueraDeRango {
-		ArreglosBi<Object> arr = new ArreglosBi<>(5, 5);
+		ArreglosBidimencionales<Object> arr = new ArreglosBidimencionales<>(20, 20);
+		System.out.println("-----Rellenando los datos-------");
 		arr.llenarDatos();
+		System.out.println("----Imprimiendo Fila-----");
+		arr.imprimirFila(0);
+		System.out.println("----Imprimiendo Columna-----");
+		arr.imprimirColumna(2);
+		System.out.println("-----Imprimiendo todos los datos-------");
 		arr.imprimir();
-		//arr.datosColumna(1).imprimir();
-		System.out.println("---------");
-		//arr.datosFila(4).imprimir();
-		//System.out.println("--------");
-		//System.out.println(arr.sumarFila(0,1,2,3));
-		arr.sumarFila(2,1,4);
-		arr.sumarColumnas(0,2,4);
+		System.out.println("----Sumando filas-----");
+		arr.sumarFila(2, 1, 4);
+		System.out.println("-----Sumando Columnas-----");
+		arr.sumarColumnas(0, 2, 4);
 	}
 
 }

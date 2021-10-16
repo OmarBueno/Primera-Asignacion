@@ -1,18 +1,19 @@
 package fes.aragon.problema2.utilerias.dinamicas.listasimple;
 
-import fes.aragon.problema2.except.IndiceFueraDeRango;
+import fes.aragon.except.IndiceFueraDeRango;
+import fes.aragon.nodos.NodoListaSimple;
 import fes.aragon.problema2.utilerias.dinamicas.listadoble.ListaDoble;
 
 /**
  * Clase que crea una lista simplemente enlazada
  *
- * @author Equipo 9 Bueno Zaldivar Omar Alejandro y Edith Sol Martinez
+ * @author Equipo 9 Bueno Zaldivar Omar Alejandro y Sol Martinez Edith
  *
  * @param <E> Tipo de datos a almacenar
  */
 public class ListaSimple<E> {
 
-	protected Nodo<E> cabeza, cola;
+	protected NodoListaSimple<E> cabeza, cola;
 	protected int longitud = 0;
 
 	/**
@@ -28,7 +29,7 @@ public class ListaSimple<E> {
 	 * @param dato Primer dato de la lista
 	 */
 	public void agregarEnCabeza(E dato) {
-		cabeza = new Nodo<E>(dato, cabeza);
+		cabeza = new NodoListaSimple<E>(dato, cabeza);
 		if (cola == null) {
 			cola = cabeza;
 		}
@@ -42,9 +43,9 @@ public class ListaSimple<E> {
 	 */
 	public void agregarEnCola(E dato) {
 		if (cabeza == null) {
-			cabeza = cola = new Nodo<E>(dato);
+			cabeza = cola = new NodoListaSimple<E>(dato);
 		} else {
-			cola.setSiguiente(new Nodo<E>(dato));
+			cola.setSiguiente(new NodoListaSimple<E>(dato));
 			cola = cola.getSiguiente();
 		}
 		longitud++;
@@ -75,7 +76,7 @@ public class ListaSimple<E> {
 			System.out.println("No existe elemento en cola");
 		} else {
 			if (cola != cabeza) {
-				Nodo<E> tmp;
+				NodoListaSimple<E> tmp;
 				for (tmp = cabeza; tmp.getSiguiente() != cola; tmp = tmp.getSiguiente())
 					;
 				tmp.setSiguiente(null);
@@ -121,7 +122,7 @@ public class ListaSimple<E> {
 		int aux = 0;
 		E e = null;
 		if (i < longitud && i >= 0) {
-			for (Nodo<E> tmp = cabeza; aux <= i; tmp = tmp.getSiguiente(), aux++) {
+			for (NodoListaSimple<E> tmp = cabeza; aux <= i; tmp = tmp.getSiguiente(), aux++) {
 				e = (E) tmp.getDato();
 			}
 		} else {
@@ -144,7 +145,7 @@ public class ListaSimple<E> {
 		int aux = 0;
 		E e = null;
 		if (i < longitud && i >= 0) {
-			for (Nodo<E> tmp = cabeza; aux <= i; tmp = tmp.getSiguiente(), aux++) {
+			for (NodoListaSimple<E> tmp = cabeza; aux <= i; tmp = tmp.getSiguiente(), aux++) {
 				e = (E) ((ListaDoble<Object>) tmp.getDato()).obtenerNodo(columna);
 			}
 		} else {
@@ -162,7 +163,7 @@ public class ListaSimple<E> {
 	 */
 	public int estaEnLista(E x) {
 		int aux = 0;
-		for (Nodo<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente(), aux++) {
+		for (NodoListaSimple<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente(), aux++) {
 			if (tmp.getDato().equals(x)) {
 				break;
 			}
@@ -190,7 +191,7 @@ public class ListaSimple<E> {
 			return true;
 		} else if (i > 0 && i < longitud - 1) {
 			int aux = 0;
-			Nodo<E> tmp;
+			NodoListaSimple<E> tmp;
 			for (tmp = cabeza; aux < i - 1; tmp = tmp.getSiguiente(), aux++)
 				;
 			tmp.setSiguiente(tmp.getSiguiente().getSiguiente());
@@ -217,7 +218,7 @@ public class ListaSimple<E> {
 			return true;
 		} else if (i > 0 && i < longitud - 1) {
 			int aux = 0;
-			Nodo<E> tmp;
+			NodoListaSimple<E> tmp;
 			for (tmp = cabeza; aux < i; tmp = tmp.getSiguiente(), aux++)
 				;
 			((ListaDoble<Object>) tmp.getDato()).eliminarEnIndice(columna);
@@ -238,11 +239,11 @@ public class ListaSimple<E> {
 		if (i == 0) {
 			agregarEnCabeza(dato);
 		} else if (i > 0 && i < longitud) {
-			Nodo<E> tmp;
+			NodoListaSimple<E> tmp;
 			int aux = 0;
 			for (tmp = cabeza; aux < i; tmp = tmp.getSiguiente(), aux++)
 				;
-			Nodo<E> tmp2 = new Nodo<E>(tmp.getDato(), tmp.getSiguiente());
+			NodoListaSimple<E> tmp2 = new NodoListaSimple<E>(tmp.getDato(), tmp.getSiguiente());
 			tmp.setDato(dato);
 			tmp.setSiguiente(tmp2);
 			if (i == getLongitud() - 1) {
@@ -267,7 +268,7 @@ public class ListaSimple<E> {
 		if (i == 0) {
 			((ListaDoble<Object>) obtenerNodo(0)).insertarEnIndice(dato, columna);
 		} else if (i > 0 && i < longitud) {
-			Nodo<E> tmp;
+			NodoListaSimple<E> tmp;
 			int aux = 0;
 			for (tmp = cabeza; aux < i; tmp = tmp.getSiguiente(), aux++)
 				;
@@ -287,7 +288,7 @@ public class ListaSimple<E> {
 	public void asignar(E dato, int i) throws IndiceFueraDeRango {
 		int aux = 0;
 		if (i < longitud && i >= 0) {
-			for (Nodo<E> tmp = cabeza; aux <= i; tmp = tmp.getSiguiente(), aux++) {
+			for (NodoListaSimple<E> tmp = cabeza; aux <= i; tmp = tmp.getSiguiente(), aux++) {
 				if (aux == i) {
 					tmp.setDato(dato);
 				}
@@ -308,7 +309,7 @@ public class ListaSimple<E> {
 	@SuppressWarnings("unchecked")
 	public void asignar(Object dato, int i, int columna) throws IndiceFueraDeRango {
 		if (i < longitud && i >= 0) {
-			Nodo<E> tmp;
+			NodoListaSimple<E> tmp;
 			int aux = 0;
 			for (tmp = cabeza; aux < i; tmp = tmp.getSiguiente(), aux++)
 				;
@@ -331,11 +332,11 @@ public class ListaSimple<E> {
 	@SuppressWarnings("unchecked")
 	public void asignar(Object dato, Object nuevoDato, boolean condicion) throws IndiceFueraDeRango {
 		if (condicion == false) {
-			for (Nodo<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente()) {
+			for (NodoListaSimple<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente()) {
 				((ListaDoble<Object>) tmp.getDato()).asignar(dato, nuevoDato, condicion);
 			}
 		} else {
-			for (Nodo<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente()) {
+			for (NodoListaSimple<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente()) {
 				((ListaDoble<Object>) tmp.getDato()).asignar(dato, nuevoDato, condicion);
 			}
 		}
@@ -359,14 +360,14 @@ public class ListaSimple<E> {
 	/**
 	 * Metodo que imprime todos los elementos de todas las listas
 	 *
-	 * @throws IndiceFueraDeRango
+	 * @throws IndiceFueraDeRango error del indice fuera de rango
 	 */
 	@SuppressWarnings("unchecked")
 	public void imprimirElementos() throws IndiceFueraDeRango {
 		if (cabeza == null) {
 		} else {
 			int aux = 0;
-			for (Nodo<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente(), aux++) {
+			for (NodoListaSimple<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente(), aux++) {
 				// System.out.println(((ListaDoble<Object>) tmp.getDato()).imprimirElementos());
 				System.out.println("Lista " + aux + ":");
 				((ListaDoble<Object>) obtenerNodo(aux)).imprimirElementos();
@@ -376,6 +377,7 @@ public class ListaSimple<E> {
 
 	/**
 	 * Metodo que devuelve una cadena con los datos de la lista
+	 * 
 	 * @return Datos de la lista
 	 * @throws IndiceFueraDeRango Advertencia de rango
 	 */
@@ -386,7 +388,7 @@ public class ListaSimple<E> {
 		} else {
 
 			int aux = 0;
-			for (Nodo<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente(), aux++) {
+			for (NodoListaSimple<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente(), aux++) {
 				cad += "Lista " + aux + ":" + "\n" + ((ListaDoble<Object>) obtenerNodo(aux)).imprimir() + "\n";
 			}
 		}
@@ -406,7 +408,7 @@ public class ListaSimple<E> {
 			throw new IndiceFueraDeRango("Fallo funcion imprimirElementos Indice fuera de rango");
 		} else {
 			int aux = 0;
-			for (Nodo<E> tmp = cabeza; aux < indice; tmp = tmp.getSiguiente(), aux++)
+			for (NodoListaSimple<E> tmp = cabeza; aux < indice; tmp = tmp.getSiguiente(), aux++)
 				;
 			System.out.println("En El indice: " + aux);
 			((ListaDoble<Object>) obtenerNodo(aux)).imprimirElementos();
@@ -429,7 +431,7 @@ public class ListaSimple<E> {
 			throw new IndiceFueraDeRango("Fallo funcion imprimirElementos Indice fuera de rango");
 		} else {
 			int aux = 0;
-			for (Nodo<E> tmp = cabeza; aux < indice; tmp = tmp.getSiguiente(), aux++)
+			for (NodoListaSimple<E> tmp = cabeza; aux < indice; tmp = tmp.getSiguiente(), aux++)
 				;
 			System.out.println("En El indice:" + aux);
 			((ListaDoble<Object>) obtenerNodo(aux)).imprimirElementos(columna);

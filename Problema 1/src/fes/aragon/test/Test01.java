@@ -1,12 +1,12 @@
 package fes.aragon.test;
 
-import fes.aragon.problema1.except.IndiceFueraDeRango;
-import fes.aragon.problema1.utilerias.estaticas.ArreglosBi;
+import fes.aragon.except.IndiceFueraDeRango;
+import fes.aragon.problema1.utilerias.estaticas.ArreglosBidimencionales;
 
 public class Test01 {
 
 	public static void main(String[] args) throws IndiceFueraDeRango {
-		ArreglosBi<Integer> arr = new ArreglosBi<>(5, 5);
+		ArreglosBidimencionales<Integer> arr = new ArreglosBidimencionales<>(5, 5);
 		arr.llenar();
 		arr.imprimir();
 		arr.suprimir(2, 2);

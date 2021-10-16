@@ -2,19 +2,20 @@ package fes.aragon.problema3.utilerias.dinamicas.listadoble;
 
 import java.util.Random;
 
-import fes.aragon.problema3.except.IndiceFueraDeRango;
+import fes.aragon.except.IndiceFueraDeRango;
+import fes.aragon.nodos.NodoListaDoble;
 
 /**
  * Clase que crea una lista doblemente enlazada y permite realizar diversas
- * funciones a trav�s de sus m�todos
+ * funciones a traves de sus metodos
  *
- * @author Equipo 9 Bueno Zaldivar Omar Alejandro y Edith Sol Martinez
+ * @author Equipo 9 Bueno Zaldivar Omar Alejandro y Sol Martinez Edith
  *
  * @param <E> Tipo de datos a almacenar
  */
-public class ListaDoble<E> {
+public class ListaDoble <E> {
 
-	protected Nodo<E> cabeza, cola;
+	protected NodoListaDoble<E> cabeza, cola;
 	protected int longitud = 0;
 
 	/**
@@ -30,7 +31,7 @@ public class ListaDoble<E> {
 	 * @param dato Primer dato de la lista
 	 */
 	public void agregarEnCabeza(E dato) {
-		cabeza = new Nodo<E>(dato, null, cabeza);
+		cabeza = new NodoListaDoble<E>(dato, null, cabeza);
 		if (cola == null) {
 			cola = cabeza;
 		} else {
@@ -46,9 +47,9 @@ public class ListaDoble<E> {
 	 */
 	public void agregarEnCola(E dato) {
 		if (cabeza == null) {
-			cabeza = cola = new Nodo<E>(dato);
+			cabeza = cola = new NodoListaDoble<E>(dato);
 		} else {
-			cola.setSiguiente(new Nodo<E>(dato));
+			cola.setSiguiente(new NodoListaDoble<E>(dato));
 			cola.getSiguiente().setAnterior(cola);
 			cola = cola.getSiguiente();
 		}
@@ -126,7 +127,7 @@ public class ListaDoble<E> {
 		int aux = 0;
 		E e = null;
 		if (i < longitud && i >= 0) {
-			for (Nodo<E> tmp = cabeza; aux <= i; tmp = tmp.getSiguiente(), aux++) {
+			for (NodoListaDoble<E> tmp = cabeza; aux <= i; tmp = tmp.getSiguiente(), aux++) {
 				e = (E) tmp.getDato();
 			}
 		} else {
@@ -144,7 +145,7 @@ public class ListaDoble<E> {
 	 */
 	public int estaEnLista(E x) {
 		int aux = 0;
-		for (Nodo<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente(), aux++) {
+		for (NodoListaDoble<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente(), aux++) {
 			if (tmp.getDato().equals(x)) {
 				break;
 			}
@@ -172,7 +173,7 @@ public class ListaDoble<E> {
 			return true;
 		} else if (i > 0 && i < longitud - 1) {
 			int aux = 0;
-			Nodo<E> tmp;
+			NodoListaDoble<E> tmp;
 			for (tmp = cabeza; aux < i - 1; tmp = tmp.getSiguiente(), aux++)
 				;
 			tmp.setSiguiente(tmp.getSiguiente().getSiguiente());
@@ -195,10 +196,10 @@ public class ListaDoble<E> {
 			agregarEnCabeza(dato);
 		} else if (i > 0 && i < longitud) {
 			int aux = 0;
-			Nodo<E> tmp;
+			NodoListaDoble<E> tmp;
 			for (tmp = cabeza; aux < i; tmp = tmp.getSiguiente(), aux++)
 				;
-			Nodo<E> tmp2 = new Nodo<E>(tmp.getDato(), tmp, tmp.getSiguiente());
+			NodoListaDoble<E> tmp2 = new NodoListaDoble<E>(tmp.getDato(), tmp, tmp.getSiguiente());
 			tmp.setDato(dato);
 			tmp.setSiguiente(tmp2);
 			longitud++;
@@ -217,7 +218,7 @@ public class ListaDoble<E> {
 	public void asignar(E dato, int i) throws IndiceFueraDeRango {
 		int aux = 0;
 		if (i < longitud && i >= 0) {
-			for (Nodo<E> tmp = cabeza; aux <= i; tmp = tmp.getSiguiente(), aux++) {
+			for (NodoListaDoble<E> tmp = cabeza; aux <= i; tmp = tmp.getSiguiente(), aux++) {
 				if (aux == i) {
 					tmp.setDato(dato);
 				}
@@ -239,14 +240,14 @@ public class ListaDoble<E> {
 	 */
 	public void asignar(E dato, E nuevoDato, boolean condicion) throws IndiceFueraDeRango {
 		if (condicion == false) {
-			for (Nodo<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente()) {
+			for (NodoListaDoble<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente()) {
 				if (tmp.getDato().equals(dato)) {
 					tmp.setDato(nuevoDato);
 					break;
 				}
 			}
 		} else {
-			for (Nodo<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente()) {
+			for (NodoListaDoble<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente()) {
 				if (tmp.getDato().equals(dato)) {
 					tmp.setDato(nuevoDato);
 				}
@@ -274,7 +275,7 @@ public class ListaDoble<E> {
 		if (cabeza == null) {
 
 		} else {
-			for (Nodo<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente()) {
+			for (NodoListaDoble<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente()) {
 				System.out.println(tmp.getDato());
 			}
 		}
@@ -290,7 +291,7 @@ public class ListaDoble<E> {
 		String cad = "";
 		if (cabeza == null) {
 		} else {
-			for (Nodo<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente()) {
+			for (NodoListaDoble<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente()) {
 				cad += tmp.getDato() + " ";
 			}
 		}
@@ -309,7 +310,7 @@ public class ListaDoble<E> {
 			throw new IndiceFueraDeRango("Fallo funcion imprimirElementos Indice fuera de rango");
 		} else {
 			int aux = 0;
-			for (Nodo<E> tmp = cabeza; aux < indice; tmp = tmp.getSiguiente(), aux++) {
+			for (NodoListaDoble<E> tmp = cabeza; aux < indice; tmp = tmp.getSiguiente(), aux++) {
 				System.out.println("Columna " + aux + " : " + (Object) tmp.getDato());
 			}
 		}

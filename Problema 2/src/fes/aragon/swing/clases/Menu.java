@@ -5,7 +5,7 @@
  */
 package fes.aragon.swing.clases;
 
-import fes.aragon.problema2.except.IndiceFueraDeRango;
+import fes.aragon.except.IndiceFueraDeRango;
 import fes.aragon.problema2.utilerias.dinamicas.listadoble.ListaDoble;
 import fes.aragon.problema2.utilerias.dinamicas.listasimple.ListaSimple;
 import javax.swing.JOptionPane;

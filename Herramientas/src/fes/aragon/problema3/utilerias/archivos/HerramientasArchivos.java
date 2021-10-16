@@ -8,13 +8,13 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-import fes.aragon.problema3.except.IndiceFueraDeRango;
+import fes.aragon.except.IndiceFueraDeRango;
 import fes.aragon.problema3.utilerias.dinamicas.listasimple.ListaSimple;
 
 	/**
 	 * Clase para manejar Archivos de texto
 	 * 
-	 * @author Equipo 9 Bueno Zaldivar Omar Alejandro y Edith Sol Martinez
+	 * @author Equipo 9 Bueno Zaldivar Omar Alejandro y Sol Martinez Edith
 	 *
 	 */
 public class HerramientasArchivos {

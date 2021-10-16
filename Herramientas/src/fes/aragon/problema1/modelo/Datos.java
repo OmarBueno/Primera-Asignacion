@@ -1,5 +1,9 @@
 package fes.aragon.problema1.modelo;
-
+/**
+ * 
+ * @author Equipo 9 Bueno Zaldivar Omar Alejandro y Sol Martinez Edith
+ *
+ */
 public class Datos {
 	private String cadena;
 	private Integer numero;
@@ -29,5 +33,4 @@ public class Datos {
 	public String toString() {
 		return "Nombre= " + cadena + ", numero= " + numero;
 	}
-	
 }

@@ -2,11 +2,12 @@ package fes.aragon.problema1.utilerias.estaticas;
 
 import java.util.Random;
 
-import fes.aragon.problema1.except.IndiceFueraDeRango;
+import fes.aragon.except.IndiceFueraDeRango;
+
 /**
  * Herramienta para crear Un Arreglo Sencillo de cualquier tipo
  * 
- * @author Equipo 9 Bueno Zaldivar Omar Alejandro y Edith Sol Martinez
+ * @author Equipo 9 Bueno Zaldivar Omar Alejandro y Sol Martinez Edith
  *
  * @param <E> Tipo del arreglo
  */
@@ -17,7 +18,7 @@ public class Arreglos<E> {
 	/**
 	 * Constructor donde se indica el numero de elementos que se desea en el arreglo
 	 * 
-	 * @param numeroElementos
+	 * @param numeroElementos NUmero de elementos en el arreglo
 	 */
 	public Arreglos(int numeroElementos) {
 		this.l = new Object[numeroElementos];
@@ -70,7 +71,6 @@ public class Arreglos<E> {
 			throw new IndiceFueraDeRango("Fallo funcion recuperar Indice fuera de rango");
 		}
 	}
-	
 
 	/**
 	 * Metodo para borrar el elemento pasando su indice

@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Random;
 
-import fes.aragon.problema3.except.IndiceFueraDeRango;
+import fes.aragon.except.IndiceFueraDeRango;
 import fes.aragon.problema3.utilerias.dinamicas.listadoble.ListaDoble;
 import fes.aragon.problema3.utilerias.dinamicas.listasimple.ListaSimple;
 

@@ -6,9 +6,9 @@
 			<attribute name="module" value="true"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="jar/Problema1jar.jar">
+	<classpathentry kind="lib" path="jar/Problema1.jar">
 		<attributes>
-			<attribute name="javadoc_location" value="jar:file:/C:/Users/omar1/Desktop/Programacion/Estructura%20de%20Datos/Primera%20Asignacion/Problema%201/Doc/Problema%201.zip!/"/>
+			<attribute name="javadoc_location" value="jar:file:/C:/Users/omar1/Desktop/Programacion/Estructura%20de%20Datos/Primera%20Asignacion/Problema%201/Doc/DocProblema%201.zip!/"/>
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="output" path="bin"/>
