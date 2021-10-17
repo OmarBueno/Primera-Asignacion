@@ -60,7 +60,7 @@ public class HerramientasArchivos {
 	 * @param archivo archivo donde se escribira
 	 * @throws IndiceFueraDeRango Advertencia de rango
 	 */
-	public static void EscribirArchivo(ListaSimple<Object> lista, File archivo) throws IndiceFueraDeRango {
+	public static void escribirArchivo(ListaSimple<Object> lista, File archivo) throws IndiceFueraDeRango {
 		File ruta = archivo;
 		FileWriter fw = null;
 		PrintWriter pw = null;

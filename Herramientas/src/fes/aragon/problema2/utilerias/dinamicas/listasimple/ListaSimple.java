@@ -368,7 +368,6 @@ public class ListaSimple<E> {
 		} else {
 			int aux = 0;
 			for (NodoListaSimple<E> tmp = cabeza; tmp != null; tmp = tmp.getSiguiente(), aux++) {
-				// System.out.println(((ListaDoble<Object>) tmp.getDato()).imprimirElementos());
 				System.out.println("Lista " + aux + ":");
 				((ListaDoble<Object>) obtenerNodo(aux)).imprimirElementos();
 			}

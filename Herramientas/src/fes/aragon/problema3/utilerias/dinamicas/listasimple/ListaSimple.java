@@ -400,11 +400,11 @@ public class ListaSimple<E> {
 	 * @throws IndiceFueraDeRango
 	 */
 	@SuppressWarnings("unchecked")
-	public void EscribirEnArchivo(File archivo, File escribir) throws IndiceFueraDeRango {
+		public void escribirEnArchivo(File archivo, File escribir) throws IndiceFueraDeRango {
 		if (cabeza == null) {
 			llenarArchivo(archivo);
 		}
-		HerramientasArchivos.EscribirArchivo((ListaSimple<Object>) this, escribir);
+		HerramientasArchivos.escribirArchivo((ListaSimple<Object>) this, escribir);
 	}
 
 	/**

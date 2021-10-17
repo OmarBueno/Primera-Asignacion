@@ -185,7 +185,8 @@ public class ArreglosBidimencionales<E> {
 	@SuppressWarnings("unchecked")
 	public void llenarDatos() throws IndiceFueraDeRango {
 		Random rd = new Random();
-		String datos[] = { "Violeta", "Omar", "Sol", "Martinez", "Alejandro", "Bueno", "Zaldivar", "Kiry", "Golo",
+		String datos[] = { "Violeta", "Omar", "Sol", "Martinez", "Alejandro"
+				, "Bueno", "Zaldivar", "Kiry", "Golo",
 				"Goyo", "Morita", "Gordita" };
 		for (int i = 0; i < celdas; i++) {
 			insertar((E) new Datos(datos[rd.nextInt(12)], rd.nextInt(101)));
@@ -245,7 +246,6 @@ public class ArreglosBidimencionales<E> {
 				aux = (Arreglos<Object>) datosFila(filas[i]);
 				for (int j = 0; j < aux.longitud(); j++) {
 					suma += ((Datos) aux.recuperar(j)).getNumero();
-					// System.out.println("Dato: "+((Datos) aux.recuperar(j)).getNumero());
 				}
 				System.out.println("Suma de la Fila " + filas[i] + ": " + suma);
 				sumas[i] = suma;
@@ -272,7 +272,6 @@ public class ArreglosBidimencionales<E> {
 				aux = (Arreglos<Object>) datosColumna(columnas[i]);
 				for (int j = 0; j < aux.longitud(); j++) {
 					suma += ((Datos) aux.recuperar(j)).getNumero();
-					// System.out.println("Dato: "+((Datos) aux.recuperar(j)).getNumero());
 				}
 				System.out.println("Suma de la Columa " + columnas[i] + ": " + suma);
 				sumas[i] = suma;
