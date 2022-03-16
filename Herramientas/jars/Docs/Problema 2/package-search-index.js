@@ -1,1 +1,0 @@
-packageSearchIndex = [{"l":"All Packages","url":"allpackages-index.html"},{"l":"fes.aragon.except"},{"l":"fes.aragon.nodos"},{"l":"fes.aragon.problema2.utilerias.dinamicas.listadoble"},{"l":"fes.aragon.problema2.utilerias.dinamicas.listasimple"}]
